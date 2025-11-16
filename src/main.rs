@@ -26,6 +26,7 @@ fn main() {
                 let api_key_name = line.split('=').next().unwrap();
                 dotenv_example_lines.push(format!("{api_key_name}="));
             }
+            dotenv_example_lines.push(String::new());
 
             let dotenv_example_file_content = dotenv_example_lines.join("\n");
             write("./.env.example", dotenv_example_file_content).unwrap();
